@@ -93,7 +93,7 @@ U.S Securities and Exchange Commission
    - The total market value of the publicly traded financial institution, based on the number of outstanding shares of stock and the current market price per share, as of the end of a particular quarter.
    
 ### [Calculations]
-- Financial Ratio Calculations: U.S Securities and Exchange Commission, Macrotrends
+- Financial Ratio Calculations: U.S Securities and Exchange Commission, StockAnalysis, Macrotrends
   - Name (VARCHAR):
    - Specific financial ratio
  - Current ratio (FLOAT):
