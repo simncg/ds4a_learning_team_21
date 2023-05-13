@@ -119,7 +119,7 @@ Yahoo & Google Finance
 - Provides real-time stock quotes and data.
 - Offers a wide range of financial data and analysis tools.
 
-### Weaknesses
+### [Weaknesses]
 NASDAQ
 - Some of the data is only available to paying customers.
 - Limited customization options for data extraction.
