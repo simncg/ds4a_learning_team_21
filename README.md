@@ -55,8 +55,8 @@ The time interval to be measured will cover the period from January 2017 to Marc
 ## Data Sources (not final)
 ### [Background Information]
 - All Publically Traded Financial Institutions: NASDAQ Stock Screener
- - Symbol (VARCHAR):
-   - Unique identifier for the publicly traded financial institution.
+  - Symbol (VARCHAR):
+    - Unique identifier for the publicly traded financial institution.
  -Name (VARCHAR):
    - The name of the publicly traded financial institution
  -Last Sale (NUMERIC):
