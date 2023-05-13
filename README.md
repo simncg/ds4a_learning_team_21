@@ -1,11 +1,11 @@
 # Silicon Valley Bank (SVB) Failure: Predictable or Not?
 Repository for DS4A project - Learning Team 21
 
-Project Guidelines:
+Important Project Links: Guidelines, Scoping Document
 
 ## Project Topic
 
-### Reasoning
+### [Reasoning]
 Our team chose this topic because it's an important and timely issue in the financial industry. Investigating the predictability of SVB's failure offers valuable insights that can be applied to detect early warning signs in other financial institutions, potentially averting similar situations in the future.
 
 The relevance of this topic can be attributed to several factors:
@@ -20,7 +20,7 @@ In summary, we believe that exploring the predictability of SVB's failure is bot
 
 ## Client Analysis
 
-### What needs to be measured?
+### [What needs to be measured?]
 Our team needs to measure various financial data and company information to analyze the predictability of the Silicon Valley Bank (SVB) failure. Specifically, we need to measure:
 
 - Financial statements of all publicly traded financial institutions, including balance sheets, income statements, and cash flow statements. 
@@ -29,10 +29,10 @@ Our team needs to measure various financial data and company information to anal
 - Basic company information, such as GICS code, sector of activity or industry, headquarters’ location, and number of employees, among others. 
 - The end product for this pipeline will be a dashboard comprised of the above information. 
 
-### Who will measure it?
+### [Who will measure it?]
 Our data engineering team will be responsible for collecting and processing the data. Once the data is available in the data warehouse, the client (data analyst) will measure and assess the variable to assess the predictability of SVB’s failure and provide insights to inform decision-making. 
 
-### What variables will we be using?
+### [What variables will we be using?]
 Some of the variables that we will be using include:
 
 - Balance sheet items, such as assets, liabilities, and equity.  
@@ -41,12 +41,105 @@ Some of the variables that we will be using include:
 - Financial ratios (ROE, ROA, CAR, NIM, and NLP) 
 - Company information: GICS code, sector, location data (latitude, longitude, county, zip code, etc), number of employees, and branch locations. 
 
-### Time Interval?
+### [Time Interval?]
 The time interval to be measured will cover the period from January 2017 to March 2022. This range allows us to analyze financial data and trends leading up to SVB’s failure, providing a comprehensive view of the factors that could have contributed to the event. 
+
+## Data Sources (not final)
+### [Background Information]
+- All Publically Traded Financial Institutions: NASDAQ Stock Screener
+ - Symbol (VARCHAR):
+   - Unique identifier for the publicly traded financial institution.
+ -Name (VARCHAR):
+   - The name of the publicly traded financial institution
+ -Last Sale (NUMERIC):
+   - The price of the most recent trade for the publicly traded financial institution
+ - Net Change (NUMERIC):
+   - The change in the price of the publicly traded financial institution since the previous trading day. 
+ - % Change (NUMERIC):
+   - The percentage change in the price of the publicly traded financial institution since the previous trading day.
+- Basic Company Information (GICS code, Sector of activity, HQ & Branch Locations): 
+U.S Securities and Exchange Commission
+ - Name (VARCHAR):
+   - The name of the publicly traded financial institution, as well as additional information about the company's sector, headquarters location, and other details.
+   
+### [Historic Data]
+- Balance sheets, income statements, and cash flow statements
+ - Name (VARCHAR):
+   - The name of the financial statements for a publicly traded financial institution. These statements provide a snapshot of the financial health of the institution and include information about its assets, liabilities, revenues, expenses, and cash flows.
+- Historical NASDAQ Stock Data: NASDAQ, Yahoo Finance, Google Finance
+ - Date (DATE):
+   - The date for which the historical stock data is being reported.
+ - Open (FLOAT):
+   - Price per share upon market opening.
+ - High (FLOAT):
+   - Highest price per share reached during the day's trading period.
+ - Low (FLOAT):
+   - Smallest price per share reached during the day’s trading period.
+ - Close (FLOAT):
+   - The price per share of the publicly traded financial institution when the market closes for trading.
+ - Adjusted Close (FLOAT):
+   - The price per share of the publicly traded financial institution when the market closes for trading on a particular day, adjusted for any dividends or other corporate actions that may have occurred during the day.
+ - Volume (INTEGER):
+   - The total number of shares of the publicly traded financial institution that were traded during the day's trading period.
+ - Quarterly Market Capitalization (FLOAT)
+   - The total market value of the publicly traded financial institution, based on the number of outstanding shares of stock and the current market price per share, as of the end of a particular quarter.
+   
+### [Calculations]
+- Financial Ratio Calculations: U.S Securities and Exchange Commission, Macrotrends
+  - Name (VARCHAR):
+   - Specific financial ratio
+ - Current ratio (FLOAT):
+   - A liquidity ratio that measures a company's ability to pay off its short-term liabilities with its current assets.
+ - Debt-to-equity ratio (FLOAT): 
+   - A leverage ratio that indicates the proportion of equity and debt a company is using to finance its assets.
+ - Gross profit margin (FLOAT): 
+   - A profitability ratio that measures the amount of revenue that exceeds the cost of goods sold, expressed as a percentage of revenue.
+ - Return on equity (FLOAT): 
+   - A profitability ratio that measures how much profit a company generates from the shareholders' investments.
+ - Price-to-earnings ratio (FLOAT): 
+   - A valuation ratio that compares a company's current stock price to its earnings per share (EPS).
+
+### [Strengths]
+NASDAQ: 
+- Provides real-time stock quotes and data.
+- Contains a wide range of data on publicly traded companies including financial data, news, and analysis.
+- Offers tools for screening stocks based on specific criteria.
+
+U.S Securities and Exchange Commission
+- Provides reliable and official information about publicly traded companies.
+- SEC filings are required by law, so the data is relatively standardized and consistent.
+- Contains a wide range of financial data, which includes financial statements and other relevant information.
+
+Macrotrends
+- Provides a wide range of financial data, including historical stock prices, financial ratios, and economic indicators.
+- Offers interactive charts and tools for analyzing the data.
+- Data is easy to access and download.
+
+Yahoo & Google Finance
+- Provides real-time stock quotes and data.
+- Offers a wide range of financial data and analysis tools.
+
+### Weaknesses
+NASDAQ
+- Some of the data is only available to paying customers.
+- Limited customization options for data extraction.
+
+U.S Securities and Exchange Commission
+- Data can be delayed or incomplete, particularly for smaller companies.
+- SEC filings can be difficult to parse and analyze, especially for less experienced data engineers.
+
+Macrotrends
+- Some of the data is sourced from third-party providers, which can make it less reliable or accurate.
+- Data can be limited for smaller or less well-known companies.
+- Limited customization options for data extraction.
+
+Yahoo & Google Finance
+- Some of the data is sourced from third-party providers, which can make it less reliable or accurate.
+
 
 ## Role Delegation & Important Dates
 
-### Team Formation
+### [Team Formation]
 |Role|Team Member|
 |-------------------------------|-----------------------------|
 |`Data Modeling + Data Science`|Simón Caicedo|
@@ -54,7 +147,7 @@ The time interval to be measured will cover the period from January 2017 to Marc
 |`Data Engineering`|Akin Onisile|
 |`Data Modeling + Data Science`|Yifei Long|
 
-### Project Timeline
+### [Project Timeline]
 |Role|Team Member|
 |-------------------------------|-----------------------------|
 |`Week 1`|Team Formation & Project Ideas|
@@ -70,7 +163,7 @@ The time interval to be measured will cover the period from January 2017 to Marc
 |`Week 11`|Initial Draft of Presentation|
 |`Week 12`|Final Draft of Presentation|
 
-### Milestones
+### [Milestones]
 1. Data Collection
 	1. Gather data from various sources such as databases, APIs, and CSV files.
 	1. Data Schema Definition. Ensure that the collected data is in the appropriate format for processing and analysis. This includes selecting an appropriate database technology and designing the database schema.
