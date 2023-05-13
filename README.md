@@ -1,7 +1,7 @@
 # Silicon Valley Bank (SVB) Failure: Predictable or Not?
 Repository for DS4A project - Learning Team 21
 
-Important Project Links: Guidelines, Scoping Document
+Important Project Links: [Guidelines](https://drive.google.com/file/d/1FZSqTbi0DSPHU31S9_z4kfHyU1Hv58a9/view?usp=sharing), [Scoping Document](https://docs.google.com/document/d/1dYdz7k2DS9dHGHzhCxIIGScosOromXlmz7MtZj7FWxw/edit?usp=sharing)
 
 ## Project Topic
 
