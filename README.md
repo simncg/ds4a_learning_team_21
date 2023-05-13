@@ -57,18 +57,18 @@ The time interval to be measured will cover the period from January 2017 to Marc
 - All Publically Traded Financial Institutions: NASDAQ Stock Screener
   - Symbol (VARCHAR):
     - Unique identifier for the publicly traded financial institution.
- -Name (VARCHAR):
-   - The name of the publicly traded financial institution
- -Last Sale (NUMERIC):
-   - The price of the most recent trade for the publicly traded financial institution
- - Net Change (NUMERIC):
-   - The change in the price of the publicly traded financial institution since the previous trading day. 
- - % Change (NUMERIC):
-   - The percentage change in the price of the publicly traded financial institution since the previous trading day.
+  -Name (VARCHAR):
+    - The name of the publicly traded financial institution
+  -Last Sale (NUMERIC):
+    - The price of the most recent trade for the publicly traded financial institution
+  - Net Change (NUMERIC):
+    - The change in the price of the publicly traded financial institution since the previous trading day. 
+  - % Change (NUMERIC):
+    - The percentage change in the price of the publicly traded financial institution since the previous trading day.
 - Basic Company Information (GICS code, Sector of activity, HQ & Branch Locations): 
 U.S Securities and Exchange Commission
- - Name (VARCHAR):
-   - The name of the publicly traded financial institution, as well as additional information about the company's sector, headquarters location, and other details.
+  - Name (VARCHAR):
+    - The name of the publicly traded financial institution, as well as additional information about the company's sector, headquarters location, and other details.
    
 ### [Historic Data]
 - Balance sheets, income statements, and cash flow statements
