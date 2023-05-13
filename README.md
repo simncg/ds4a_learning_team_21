@@ -72,40 +72,40 @@ U.S Securities and Exchange Commission
    
 ### [Historic Data]
 - Balance sheets, income statements, and cash flow statements
- - Name (VARCHAR):
-   - The name of the financial statements for a publicly traded financial institution. These statements provide a snapshot of the financial health of the institution and include information about its assets, liabilities, revenues, expenses, and cash flows.
+  - Name (VARCHAR):
+    - The name of the financial statements for a publicly traded financial institution. These statements provide a snapshot of the financial health of the institution and include information about its assets, liabilities, revenues, expenses, and cash flows.
 - Historical NASDAQ Stock Data: NASDAQ, Yahoo Finance, Google Finance
- - Date (DATE):
-   - The date for which the historical stock data is being reported.
- - Open (FLOAT):
-   - Price per share upon market opening.
- - High (FLOAT):
-   - Highest price per share reached during the day's trading period.
- - Low (FLOAT):
-   - Smallest price per share reached during the day’s trading period.
- - Close (FLOAT):
-   - The price per share of the publicly traded financial institution when the market closes for trading.
- - Adjusted Close (FLOAT):
-   - The price per share of the publicly traded financial institution when the market closes for trading on a particular day, adjusted for any dividends or other corporate actions that may have occurred during the day.
- - Volume (INTEGER):
-   - The total number of shares of the publicly traded financial institution that were traded during the day's trading period.
- - Quarterly Market Capitalization (FLOAT)
-   - The total market value of the publicly traded financial institution, based on the number of outstanding shares of stock and the current market price per share, as of the end of a particular quarter.
+  - Date (DATE):
+    - The date for which the historical stock data is being reported.
+  - Open (FLOAT):
+    - Price per share upon market opening.
+  - High (FLOAT):
+    - Highest price per share reached during the day's trading period.
+  - Low (FLOAT):
+    - Smallest price per share reached during the day’s trading period.
+  - Close (FLOAT):
+    - The price per share of the publicly traded financial institution when the market closes for trading.
+  - Adjusted Close (FLOAT):
+    - The price per share of the publicly traded financial institution when the market closes for trading on a particular day, adjusted for any dividends or other corporate actions that may have occurred during the day.
+  - Volume (INTEGER):
+    - The total number of shares of the publicly traded financial institution that were traded during the day's trading period.
+  - Quarterly Market Capitalization (FLOAT)
+    - The total market value of the publicly traded financial institution, based on the number of outstanding shares of stock and the current market price per share, as of the end of a particular quarter.
    
 ### [Calculations]
 - Financial Ratio Calculations: U.S Securities and Exchange Commission, StockAnalysis, Macrotrends
   - Name (VARCHAR):
-   - Specific financial ratio
- - Current ratio (FLOAT):
-   - A liquidity ratio that measures a company's ability to pay off its short-term liabilities with its current assets.
- - Debt-to-equity ratio (FLOAT): 
-   - A leverage ratio that indicates the proportion of equity and debt a company is using to finance its assets.
- - Gross profit margin (FLOAT): 
-   - A profitability ratio that measures the amount of revenue that exceeds the cost of goods sold, expressed as a percentage of revenue.
- - Return on equity (FLOAT): 
-   - A profitability ratio that measures how much profit a company generates from the shareholders' investments.
- - Price-to-earnings ratio (FLOAT): 
-   - A valuation ratio that compares a company's current stock price to its earnings per share (EPS).
+    - Specific financial ratio
+  - Current ratio (FLOAT):
+    - A liquidity ratio that measures a company's ability to pay off its short-term liabilities with its current assets.
+  - Debt-to-equity ratio (FLOAT): 
+    - A leverage ratio that indicates the proportion of equity and debt a company is using to finance its assets.
+  - Gross profit margin (FLOAT): 
+    - A profitability ratio that measures the amount of revenue that exceeds the cost of goods sold, expressed as a percentage of revenue.
+  - Return on equity (FLOAT): 
+    - A profitability ratio that measures how much profit a company generates from the shareholders' investments.
+  - Price-to-earnings ratio (FLOAT): 
+    - A valuation ratio that compares a company's current stock price to its earnings per share (EPS).
 
 ### [Strengths]
 NASDAQ: 
