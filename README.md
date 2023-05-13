@@ -27,18 +27,18 @@ Repository for DS4A project - Learning Team 21
 
 ### Milestones
 1. Data Collection
-	a. Gather data from various sources such as databases, APIs, and CSV files.
-	b. Data Schema Definition. Ensure that the collected data is in the appropriate format for processing and analysis. This includes selecting an appropriate database technology and designing the database schema.
+	1. Gather data from various sources such as databases, APIs, and CSV files.
+	1. Data Schema Definition. Ensure that the collected data is in the appropriate format for processing and analysis. This includes selecting an appropriate database technology and designing the database schema.
 2. Data Preprocessing
-	a. Clean and ensure that the collected data is accurate, complete, and consistent.
-	b. Includes handling missing or corrupted data, performing feature engineering, and transforming the data into a format suitable for modeling.
+	1. Clean and ensure that the collected data is accurate, complete, and consistent.
+	1. Includes handling missing or corrupted data, performing feature engineering, and transforming the data into a format suitable for modeling.
 3. Data Pipeline Development
-	a. Develop and deploy data pipelines to automate the data engineering process.
-	b. Use technologies such as Apache Airflow or AWS Glue to schedule and orchestrate data processing tasks.
+	1. Develop and deploy data pipelines to automate the data engineering process.
+	1. Use technologies such as Apache Airflow or AWS Glue to schedule and orchestrate data processing tasks.
 4. Data Modeling
-	a.  Build and test models to predict the likelihood of SVB failure.
-	b. Includes testing different algorithms, evaluating their performance using various metrics, and fine-tuning the models to improve their accuracy.
+	1.  Build and test models to predict the likelihood of SVB failure.
+	1. Includes testing different algorithms, evaluating their performance using various metrics, and fine-tuning the models to improve their accuracy.
 5. Documentation/Presentaton.
-	a. Create detailed technical specifications, documenting code and data flows, and providing clear and concise user documentation.
-	b. Prepare for the final presentation.
+	1. Create detailed technical specifications, documenting code and data flows, and providing clear and concise user documentation.
+	1. Prepare for the final presentation.
   
