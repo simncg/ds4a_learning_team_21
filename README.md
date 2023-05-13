@@ -3,6 +3,14 @@ Repository for Correlation One's DS4A Data Engineering Program Final Project - L
 
 Important Project Links: [Guidelines](https://drive.google.com/file/d/1FZSqTbi0DSPHU31S9_z4kfHyU1Hv58a9/view?usp=sharing), [Scoping Document](https://docs.google.com/document/d/1dYdz7k2DS9dHGHzhCxIIGScosOromXlmz7MtZj7FWxw/edit?usp=sharing)
 
+### [Team Formation]
+|Role|Team Member|
+|-------------------------------|-----------------------------|
+|`Data Modeling + Data Science`|Simón Caicedo|
+|`Data Engineering`|Rodney Nuñez|
+|`Data Engineering`|Akin Onisile|
+|`Data Modeling + Data Science`|Yifei Long|
+
 ## Project Topic
 
 ### [Reasoning]
@@ -137,15 +145,7 @@ Yahoo & Google Finance
 - Some of the data is sourced from third-party providers, which can make it less reliable or accurate.
 
 
-## Role Delegation & Important Dates
-
-### [Team Formation]
-|Role|Team Member|
-|-------------------------------|-----------------------------|
-|`Data Modeling + Data Science`|Simón Caicedo|
-|`Data Engineering`|Rodney Nuñez|
-|`Data Engineering`|Akin Onisile|
-|`Data Modeling + Data Science`|Yifei Long|
+## Important Dates & Project Concerns
 
 ### [Project Timeline]
 |Role|Team Member|
@@ -179,3 +179,8 @@ Yahoo & Google Finance
 5. Documentation/Presentaton.
 	1. Create detailed technical specifications, documenting code and data flows, and providing clear and concise user documentation.
 	1. Prepare for the final presentation.
+
+### [Concerns]
+- Data Quality: The accuracy and completeness of the data used to build the models could be a concern.
+- Data Privacy: The project will involve working with sensitive data that may be subject to privacy regulations. 
+- Model Performance & Bias: Since a failure event may be influenced by a variety of factors and some factors may be outside of the control, the accuracy and reliability of the models will be a major concern.
