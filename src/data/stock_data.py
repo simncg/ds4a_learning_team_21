@@ -7,21 +7,32 @@ import datetime
 from ..utils.date_json_handler import date_handler
 
 
-# def create_errors_dict():
-#     keys = ["income_statement", "balance_sheet", "cash_flow_statement", "ratios"]
-#     error_dict = {}
-
-#     for key in keys:
-#         error_dict[key] = {"annual": [], "quarterly": []}
-
-#     error_dict["stock_price"] = []
-#     error_dict["profile"] = []
-        
-#     return error_dict
-
-
 class StockData:
+    """
+    Class to scrape and retrieve stock data and related financial data of a company.
+    
+    Attributes
+    ----------
+    symbol : str
+        The stock symbol of the company.
+    urls : dict
+        A dictionary of URLs for scraping financial data.
+    company_data : dict
+        A dictionary containing all scraped and retrieved data.
+    scrape_done : bool
+        A flag indicating if data scraping is completed.
+    retrieve_done : bool
+        A flag indicating if data retrieval is completed.
+    """
     def __init__(self, symbol):
+        """
+        Initialize a new instance of the StockData class.
+
+        Parameters
+        ----------
+        symbol : str
+            The stock symbol of the company.
+        """
         self.symbol = symbol
         self.urls = self._create_urls()
         self.company_data = self._create_dict_company()
@@ -30,6 +41,9 @@ class StockData:
 
 
     def _create_urls(self):
+        """
+        Private method to construct the URLs for various financial statements.
+        """
         ticker = self.symbol.lower()
         urls = {}
 
@@ -48,6 +62,9 @@ class StockData:
         return urls
 
     def _create_dict_company(self):
+        """
+        Private method to initialize a dictionary for storing all the company's data.
+        """
         keys = ["income_statement", "balance_sheet", "cash_flow_statement", "ratios"]
         all_data_dict = {}
 
@@ -61,6 +78,14 @@ class StockData:
 
 
     def _process_key(self, key):
+        """
+        Private method to process the key of a URL.
+
+        Parameters
+        ----------
+        key : str
+            The key of a URL.
+        """
         if "_quarterly" in key:
             frequency = "quarterly"
             processed_key = key.replace('_quarterly', '')    
@@ -73,15 +98,16 @@ class StockData:
         return processed_key, frequency
 
     def scrape_financial_statements(self):
+        """
+        Method to scrape financial statements for the company.
+        """
         self.company_data = self._scrape_stock_analysis()
         self.scrape_done = True
 
     
     def _scrape_stock_analysis(self):
         """
-        Scrapes financial data for the stock symbol associated with this instance of StockData from 
-        stockanalysis.com. It generates a dictionary containing annual and quarterly financial 
-        data including income statement, balance sheet, cash flow statement, and ratios.
+        Private method to scrape the financial data of the company from stockanalysis.com.
         """
 
         for key in self.urls.keys():
@@ -168,6 +194,16 @@ class StockData:
     
     
     def retrieve_profile_stock_price(self, start, end):
+        """
+        Method to retrieve stock price data and company profile from Yahoo Finance.
+
+        Parameters
+        ----------
+        start : str
+            The start date for the stock price data retrieval in the format 'YYYY-MM-DD'.
+        end : str
+            The end date for the stock price data retrieval in the format 'YYYY-MM-DD'.
+        """
         try:
             # Retrieve data from Yahoo Finance
             sym = Ticker(self.symbol)
@@ -195,6 +231,9 @@ class StockData:
         
         
     def save_to_json(self):
+        """
+        Method to save the scraped and retrieved company data in JSON format.
+        """
         if self.scrape_done and self.retrieve_done:
             with open(f"../data/raw/json_data/{self.symbol}.json", 'w') as f:
                 json.dump(self.company_data, f, default=date_handler)
