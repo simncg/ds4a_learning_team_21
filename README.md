@@ -65,6 +65,7 @@ The time interval to be measured will cover the period from January 2017 to Marc
     - The change in the price of the publicly traded financial institution since the previous trading day. 
   - % Change (NUMERIC):
     - The percentage change in the price of the publicly traded financial institution since the previous trading day.
+
 - Basic Company Information (GICS code, Sector of activity, HQ & Branch Locations): 
 U.S Securities and Exchange Commission
   - Name (VARCHAR):
@@ -74,6 +75,7 @@ U.S Securities and Exchange Commission
 - Balance sheets, income statements, and cash flow statements
   - Name (VARCHAR):
     - The name of the financial statements for a publicly traded financial institution. These statements provide a snapshot of the financial health of the institution and include information about its assets, liabilities, revenues, expenses, and cash flows.
+
 - Historical NASDAQ Stock Data: NASDAQ, Yahoo Finance, Google Finance
   - Date (DATE):
     - The date for which the historical stock data is being reported.
