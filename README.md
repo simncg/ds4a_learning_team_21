@@ -147,7 +147,8 @@ The time interval to be measured will cover the period from January 2017 to Marc
 We obtained data both at the annual and quarterly level
 
 - Balance Sheet Data:
-  - Symbol (VARCHAR): The unique identifier or ticker symbol for the publicly traded company.
+  - Symbol (VARCHAR): 
+    - The unique identifier or ticker symbol for the publicly traded company.
   - Year (DATE): 
     - If it is the annual data, the year in which the data was recorded.
   - Quarter (DATE):
@@ -217,7 +218,8 @@ We obtained data both at the annual and quarterly level
 
 
 - Cash Flow Statement Data:
-  - Symbol (VARCHAR): The unique identifier or ticker symbol for the publicly traded company.
+  - Symbol (VARCHAR): 
+    - The unique identifier or ticker symbol for the publicly traded company.
   - Year (DATE): 
     - If it is the annual data, this variable is the year in which the data was recorded. 
   - Quarter (DATE): 
@@ -261,13 +263,12 @@ We obtained data both at the annual and quarterly level
 
 
 - Income Statement Data:
-  - Symbol (VARCHAR): The unique identifier or ticker symbol for the publicly traded company.
+  - Symbol (VARCHAR): 
+    - The unique identifier or ticker symbol for the publicly traded company.
   - Year (DATE): 
     - If it is the annual data, this variable is the year in which the data was recorded.
-
   - Quarter (DATE): 
     - If it is the quarterly data, this variable is the quarter in which the data was recorded.
-  
   - Revenue (NUMERIC): 
     - The total money made from selling goods and services.
   - Revenue Growth (YoY) (NUMERIC): 
@@ -321,8 +322,6 @@ We obtained data both at the annual and quarterly level
   - Effective Tax Rate (NUMERIC): 
     - The average rate at which a company's pre-tax profits are taxed.
   - EBITDA (NUMERIC): 
-
-
     - Earnings before interest, taxes, depreciation, and amortization.
   - EBITDA Margin (NUMERIC): 
     - EBITDA divided by total revenue, expressed as a percentage.
@@ -335,62 +334,62 @@ We obtained data both at the annual and quarterly level
 
 
 - Ratios: 
-
-  - Symbol (VARCHAR): The unique identifier or ticker symbol for the publicly traded company.
-
-  - Year:  If it is the annual data, this variable is the year in which the data was recorded.
-
-  - Quarter: If it is the quarterly data, this variable is the quarter in which the data was recorded. 
-
-  - Market Capitalization: This is the total value of a company's outstanding shares of stock, calculated by multiplying the share price by the number of outstanding shares.
-
-  - Market Cap Growth: This shows the percentage change in the market capitalization from year to year.
-
-  - Enterprise Value: This is a measure of a company's total value, considering not only its equity (like market capitalization does) but also its debt and cash.
-
-  - PE Ratio (Price/Earnings Ratio): This ratio compares a company's current share price to its earnings per share (EPS).
-
-  - PS Ratio (Price/Sales Ratio): This ratio compares a company's market capitalization with its annual revenue.
-
-  - PB Ratio (Price/Book Ratio): This ratio compares a company's market capitalization to its book value (which is assets minus liabilities).
-
-  - P/FCF Ratio (Price/Free Cash Flow Ratio): This compares a company's market capitalization to its free cash flow.
-
-  - P/OCF Ratio (Price/Operating Cash Flow Ratio): This compares a company's market capitalization to its operating cash flow.
-
-  - EV/Sales Ratio: This compares a company's enterprise value to its annual revenue.
-
-  - EV/EBITDA Ratio: This compares a company's enterprise value to its earnings before interest, tax, depreciation, and amortization (EBITDA).
-
-  - EV/EBIT Ratio: This compares a company's enterprise value to its earnings before interest and tax (EBIT).
-
-  - EV/FCF Ratio: This compares a company's enterprise value to its free cash flow.
-
-  - Debt / Equity Ratio: This measures a company's financial leverage by comparing its total debt with its total equity.
-
-  - Debt / EBITDA Ratio: This compares a company's total debt to its EBITDA.
-
-  - Debt / FCF Ratio: This compares a company's total debt to its free cash flow.
-
-  - Asset Turnover: This ratio measures how efficiently a company uses its assets to generate revenue.
-
-  - Return on Equity (ROE): This ratio measures the profitability of a company in relation to the equity held by shareholders.
-
-  - Return on Assets (ROA): This ratio measures the profitability of a company in relation to its total assets.
-
-  - Return on Capital (ROIC): This ratio measures the return that an investment generates for capital contributors, i.e., bondholders and shareholders.
-
-  - Earnings Yield: This is the inverse of the P/E ratio and shows the percentage of each dollar invested in the stock that was earned by the company.
-
-  - FCF Yield: This is the inverse of the P/FCF ratio and shows the percentage of free cash flow relative to the market capitalization of the company.
-
-  - Dividend Yield: This shows how much a company pays out in dividends each year relative to its share price.
-
-  - Payout Ratio: This measures the proportion of earnings a company pays shareholders in dividends.
-
-  - Buyback Yield / Dilution: This measures the percentage change in the number of outstanding shares due to stock buybacks or dilution.
-
-  - Total Shareholder Return: This measures the return of an investment in a company's stock, including both price appreciation and dividends.
+  - Symbol (VARCHAR): 
+    - The unique identifier or ticker symbol for the publicly traded company.
+  - Year:  
+    - If it is the annual data, this variable is the year in which the data was recorded.
+  - Quarter: 
+    - If it is the quarterly data, this variable is the quarter in which the data was recorded. 
+  - Market Capitalization: 
+    - This is the total value of a company's outstanding shares of stock, calculated by multiplying the share price by the number of outstanding shares.
+  - Market Cap Growth: 
+    - This shows the percentage change in the market capitalization from year to year.
+  - Enterprise Value: 
+    - This is a measure of a company's total value, considering not only its equity (like market capitalization does) but also its debt and cash.
+  - PE Ratio (Price/Earnings Ratio): 
+    - This ratio compares a company's current share price to its earnings per share (EPS).
+  - PS Ratio (Price/Sales Ratio): 
+    - This ratio compares a company's market capitalization with its annual revenue.
+  - PB Ratio (Price/Book Ratio): 
+    - This ratio compares a company's market capitalization to its book value (which is assets minus liabilities).
+  - P/FCF Ratio (Price/Free Cash Flow Ratio): 
+    - This compares a company's market capitalization to its free cash flow.
+  - P/OCF Ratio (Price/Operating Cash Flow Ratio): 
+    - This compares a company's market capitalization to its operating cash flow.
+  - EV/Sales Ratio: 
+    - This compares a company's enterprise value to its annual revenue.
+  - EV/EBITDA Ratio: 
+    - This compares a company's enterprise value to its earnings before interest, tax, depreciation, and amortization (EBITDA).
+  - EV/EBIT Ratio: 
+    - This compares a company's enterprise value to its earnings before interest and tax (EBIT).
+  - EV/FCF Ratio: 
+    - This compares a company's enterprise value to its free cash flow.
+  - Debt / Equity Ratio: 
+    - This measures a company's financial leverage by comparing its total debt with its total equity.
+  - Debt / EBITDA Ratio: 
+    - This compares a company's total debt to its EBITDA.
+  - Debt / FCF Ratio: 
+    - This compares a company's total debt to its free cash flow.
+  - Asset Turnover: 
+    - This ratio measures how efficiently a company uses its assets to generate revenue.
+  - Return on Equity (ROE): 
+    - This ratio measures the profitability of a company in relation to the equity held by shareholders.
+  - Return on Assets (ROA): 
+    - This ratio measures the profitability of a company in relation to its total assets.
+  - Return on Capital (ROIC): 
+    - This ratio measures the return that an investment generates for capital contributors, i.e., bondholders and shareholders.
+  - Earnings Yield: 
+    - This is the inverse of the P/E ratio and shows the percentage of each dollar invested in the stock that was earned by the company.
+  - FCF Yield: 
+    - This is the inverse of the P/FCF ratio and shows the percentage of free cash flow relative to the market capitalization of the company.
+  - Dividend Yield: 
+    - This shows how much a company pays out in dividends each year relative to its share price.
+  - Payout Ratio: 
+    - This measures the proportion of earnings a company pays shareholders in dividends.
+  - Buyback Yield / Dilution: 
+    - This measures the percentage change in the number of outstanding shares due to stock buybacks or dilution.
+  - Total Shareholder Return: 
+    - This measures the return of an investment in a company's stock, including both price appreciation and dividends.
 
 
 ### [Strengths]
