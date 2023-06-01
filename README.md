@@ -67,7 +67,7 @@ The time interval to be measured will cover the period from January 2017 to Marc
 ### **Company Profile**: Obtained via Yahoo Finance API
 
 - Basic Company Information:
-  - ticker (VARCHAR): 
+  - Symbol (VARCHAR): 
     - Identifier of the company 
   - address1 (VARCHAR):
     - The street address of the company's HQ location.
@@ -147,6 +147,7 @@ The time interval to be measured will cover the period from January 2017 to Marc
 We obtained data both at the annual and quarterly level
 
 - Balance Sheet Data:
+  - Symbol (VARCHAR): The unique identifier or ticker symbol for the publicly traded company.
   - Year (DATE): 
     - If it is the annual data, the year in which the data was recorded.
   - Quarter (DATE):
@@ -216,6 +217,7 @@ We obtained data both at the annual and quarterly level
 
 
 - Cash Flow Statement Data:
+  - Symbol (VARCHAR): The unique identifier or ticker symbol for the publicly traded company.
   - Year (DATE): 
     - If it is the annual data, this variable is the year in which the data was recorded. 
   - Quarter (DATE): 
@@ -259,6 +261,7 @@ We obtained data both at the annual and quarterly level
 
 
 - Income Statement Data:
+  - Symbol (VARCHAR): The unique identifier or ticker symbol for the publicly traded company.
   - Year (DATE): 
     - If it is the annual data, this variable is the year in which the data was recorded.
 
@@ -332,6 +335,8 @@ We obtained data both at the annual and quarterly level
 
 
 - Ratios: 
+
+  - Symbol (VARCHAR): The unique identifier or ticker symbol for the publicly traded company.
 
   - Year:  If it is the annual data, this variable is the year in which the data was recorded.
 
