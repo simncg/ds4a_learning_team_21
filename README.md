@@ -52,60 +52,341 @@ Some of the variables that we will be using include:
 ### [Time Interval?]
 The time interval to be measured will cover the period from January 2017 to March 2022. This range allows us to analyze financial data and trends leading up to SVB’s failure, providing a comprehensive view of the factors that could have contributed to the event. 
 
-## Data Sources (not final)
-### [Background Information]
-- All Publically Traded Financial Institutions: NASDAQ Stock Screener
+## Data Sources 
+
+
+### **Stock Information:**
   - Symbol (VARCHAR):
-    - Unique identifier for the publicly traded financial institution.
-  - Name (VARCHAR):
-    - The name of the publicly traded financial institution
-  - Last Sale (NUMERIC):
-    - The price of the most recent trade for the publicly traded financial institution
-  - Net Change (NUMERIC):
-    - The change in the price of the publicly traded financial institution since the previous trading day. 
-  - % Change (NUMERIC):
-    - The percentage change in the price of the publicly traded financial institution since the previous trading day.
-- Basic Company Information (GICS code, Sector of activity, HQ & Branch Locations): 
-U.S Securities and Exchange Commission
-  - Name (VARCHAR):
-    - The name of the publicly traded financial institution, as well as additional information about the company's sector, headquarters location, and other details.
+    - The unique identifier or ticker symbol for the publicly traded company.
+  - Company Name (VARCHAR):
+    - The official name of the publicly traded company.
+  - Industry Name (VARCHAR):
+    - The specific industry in which the company operates.
+
+
+### **Company Profile**: Obtained via Yahoo Finance API
+
+- Basic Company Information:
+  - ticker (VARCHAR): 
+    - Identifier of the company 
+  - address1 (VARCHAR):
+    - The street address of the company's HQ location.
+  - city (VARCHAR):
+    - The city in which the company's HQ reside.
+  - state (VARCHAR):
+    - The state in which the company's HQ reside.
+  - zip (VARCHAR):
+    - The zip code of the company's HQ.
+  - country (VARCHAR):
+    - The country in which the company's HQ reside.
+  - phone (VARCHAR):
+    - The main contact phone number for the company.
+  - website (VARCHAR):
+    - The official website URL for the company.
+  - latitude (NUMERIC):
+    - The latitude of the company's HQ.
+  - longitude (NUMERIC):
+    - The longitude of the company's HQ.
+
+- Company Industry and Sector:
+  - industry (VARCHAR):
+    - The specific industry in which the company operates.
+  - industryDisp (VARCHAR):
+    - A displayed version of the specific industry in which the company operates.
+  - sector (VARCHAR):
+    - The general sector in which the company operates.
+
+- Company Overview:
+  - longBusinessSummary (TEXT):
+    - A detailed description of the company's business model and operations.
+
+- Company Employee Information:
+  - fullTimeEmployees (NUMERIC):
+    - The number of full-time employees working for the company.
+
+- Company Risk Information:
+  - auditRisk (NUMERIC):
+    - The risk level associated with the company's audit, higher numbers imply higher risk.
+  - boardRisk (NUMERIC):
+    - The risk level associated with the company's board of directors, higher numbers imply higher risk.
+  - compensationRisk (NUMERIC):
+    - The risk level associated with the company's compensation structure, higher numbers imply higher risk.
+  - shareHolderRightsRisk (NUMERIC):
+    - The risk level associated with shareholder rights, higher numbers imply higher risk.
+  - overallRisk (NUMERIC):
+    - The overall risk level associated with the company, higher numbers imply higher risk.
+
+  
    
-### [Historic Data]
-- Balance sheets, income statements, and cash flow statements
-  - Name (VARCHAR):
-    - The name of the financial statements for a publicly traded financial institution. These statements provide a snapshot of the financial health of the institution and include information about its assets, liabilities, revenues, expenses, and cash flows.
-- Historical NASDAQ Stock Data: NASDAQ, Yahoo Finance, Google Finance
-  - Date (DATE):
-    - The date for which the historical stock data is being reported.
-  - Open (FLOAT):
-    - Price per share upon market opening.
-  - High (FLOAT):
-    - Highest price per share reached during the day's trading period.
-  - Low (FLOAT):
-    - Smallest price per share reached during the day’s trading period.
-  - Close (FLOAT):
-    - The price per share of the publicly traded financial institution when the market closes for trading.
-  - Adjusted Close (FLOAT):
-    - The price per share of the publicly traded financial institution when the market closes for trading on a particular day, adjusted for any dividends or other corporate actions that may have occurred during the day.
-  - Volume (INTEGER):
-    - The total number of shares of the publicly traded financial institution that were traded during the day's trading period.
-  - Quarterly Market Capitalization (FLOAT)
-    - The total market value of the publicly traded financial institution, based on the number of outstanding shares of stock and the current market price per share, as of the end of a particular quarter.
+### **Stock Prices Data**: Obtained via Yahoo Finance API 
+
+- Stock Trading Data:
+  - symbol (VARCHAR):
+    - The unique identifier or ticker symbol for the publicly traded company.
+  - date (DATE):
+    - The specific date of the recorded trading data.
+  - open (NUMERIC):
+    - The opening price of the stock for the trading day.
+  - high (NUMERIC):
+    - The highest price of the stock reached in the trading day.
+  - low (NUMERIC):
+    - The lowest price of the stock reached in the trading day.
+  - close (NUMERIC):
+    - The closing price of the stock for the trading day.
+  - volume (NUMERIC):
+    - The number of shares of the stock that were traded during the trading day.
+  - adjclose (NUMERIC):
+    - The adjusted closing price of the stock for the trading day. This is typically adjusted for corporate actions such as dividends, stock splits, and new stock offerings.
+  - dividends (NUMERIC):
+    - The amount of dividends paid out on that trading day.
+  - splits (NUMERIC):
+    - The split ratio applied to the stock on that trading day. A split ratio of 2, for example, would represent a 2-for-1 stock split.
    
-### [Calculations]
-- Financial Ratio Calculations: U.S Securities and Exchange Commission, StockAnalysis, Macrotrends
-  - Name (VARCHAR):
-    - Specific financial ratio
-  - Current ratio (FLOAT):
-    - A liquidity ratio that measures a company's ability to pay off its short-term liabilities with its current assets.
-  - Debt-to-equity ratio (FLOAT): 
-    - A leverage ratio that indicates the proportion of equity and debt a company is using to finance its assets.
-  - Gross profit margin (FLOAT): 
-    - A profitability ratio that measures the amount of revenue that exceeds the cost of goods sold, expressed as a percentage of revenue.
-  - Return on equity (FLOAT): 
-    - A profitability ratio that measures how much profit a company generates from the shareholders' investments.
-  - Price-to-earnings ratio (FLOAT): 
-    - A valuation ratio that compares a company's current stock price to its earnings per share (EPS).
+### **Financial Statements**
+
+We obtained data both at the annual and quarterly level
+
+- Balance Sheet Data:
+  - Year (DATE): 
+    - If it is the annual data, the year in which the data was recorded.
+  - Quarter (DATE):
+    - If it is the quarterly data, the quarter in which the data was recorded.
+  - Cash & Equivalents (NUMERIC): 
+    - The company's cash on hand, as well as assets that can be readily converted into cash.
+  - Short-Term Investments (NUMERIC): 
+    - Investments that are expected to be converted into cash within a year.
+  - Cash & Cash Equivalents (NUMERIC): 
+    - The sum of cash on hand and short-term investments.
+  - Cash Growth (NUMERIC): 
+    - The percentage growth in cash and cash equivalents from the previous year.
+  - Receivables (NUMERIC): 
+    - Money owed to the company by its customers from sales made on credit.
+  - Other Current Assets (NUMERIC): 
+    - Other assets that can or will be converted into cash within one year.
+  - Total Current Assets (NUMERIC): 
+    - The total value of all assets that are expected to be converted into cash within one year.
+  - Property, Plant & Equipment (NUMERIC): 
+    - The company's tangible fixed assets, such as land, buildings, and equipment.
+  - Goodwill and Intangibles (NUMERIC): 
+    - The value of a company's brand name, solid customer base, good customer relations, good employee relations, and any patents or proprietary technology.
+  - Other Long-Term Assets (NUMERIC): 
+    - Other assets that cannot be converted into cash within one year.
+  - Total Long-Term Assets (NUMERIC): 
+    - The total value of long-term assets.
+  - Total Assets (NUMERIC): 
+    - The total value of all the company's assets.
+  - Accounts Payable (NUMERIC): 
+    - The amount of short-term debt the company owes to its suppliers or creditors.
+  - Current Debt (NUMERIC): 
+    - The portion of debt due to be paid within one year.
+  - Other Current Liabilities (NUMERIC): 
+    - Other obligations due within one year.
+  - Total Current Liabilities (NUMERIC): 
+    - The total amount of liabilities due within one year.
+  - Long-Term Debt (NUMERIC): 
+    - The portion of debt that is due more than one year from now.
+  - Other Long-Term Liabilities (NUMERIC): 
+    - Other obligations due after one year.
+  - Total Long-Term Liabilities (NUMERIC): 
+    - The total amount of liabilities due after one year.
+  - Total Liabilities (NUMERIC): 
+    - The total amount of both current and long-term liabilities.
+  - Total Debt (NUMERIC): 
+    - The total amount of debt, both short-term and long-term.
+  - Debt Growth (NUMERIC): 
+    - The percentage growth in debt from the previous year.
+  - Common Stock (NUMERIC): 
+    - The total value of all outstanding common shares.
+  - Retained Earnings (NUMERIC): 
+    - The portion of net profits not paid out as dividends but instead reinvested in the core business or used to pay off debt.
+  - Comprehensive Income (NUMERIC): 
+    - The total change in equity for a reporting period other than transactions with owners (like dividends and share repurchases).
+  - Shareholders' Equity (NUMERIC): 
+    - The net value of the company, calculated by subtracting total liabilities from total assets.
+  - Total Liabilities and Equity (NUMERIC): 
+    - The sum of total liabilities and total equity. This should be equal to total assets.
+  - Net Cash / Debt (NUMERIC): 
+    - The difference between a company's cash and its total debt.
+  - Net Cash Per Share (NUMERIC): 
+    - The net cash per outstanding share of common stock.
+  - Working Capital (NUMERIC): 
+    - A measure of a company's operational liquidity. It's calculated as current assets minus current liabilities.
+  - Book Value Per Share (NUMERIC): 
+    - The value of a company if all its assets were sold and all its liabilities were paid off, divided by the number of outstanding shares.
+
+
+- Cash Flow Statement Data:
+  - Year (DATE): 
+    - If it is the annual data, this variable is the year in which the data was recorded. 
+  - Quarter (DATE): 
+    - If it is the quarterly data, this variable is the quarter in which the data was recorded. 
+  - Net Income (NUMERIC): 
+    - The company's total profit or loss.
+  - Depreciation & Amortization (NUMERIC): 
+    - The decrease in value of the company's fixed assets due to wear and tear, and the gradual reduction in the value of intangible assets.
+  - Other Operating Activities (NUMERIC): 
+    - The cash inflows or outflows related to other operations that are not categorized under net income or depreciation & amortization.
+  - Operating Cash Flow (NUMERIC): 
+    - The cash generated by a company's regular business operations.
+  - Operating Cash Flow Growth (NUMERIC): 
+    - The percentage growth in operating cash flow from the previous year.
+  - Change in Investments (NUMERIC): 
+    - The net change in the company's investments over the period.
+  - Other Investing Activities (NUMERIC): 
+    - The cash inflows or outflows related to other investing activities that are not categorized under change in investments.
+  - Investing Cash Flow (NUMERIC): 
+    - The cash inflows or outflows from investments.
+  - Dividends Paid (NUMERIC): 
+    - The total dividends paid to shareholders during the period.
+  - Share Issuance / Repurchase (NUMERIC): 
+    - The net cash inflow (issuance) or outflow (repurchase) from equity financing.
+  - Debt Issued / Paid (NUMERIC): 
+    - The net cash inflow (debt issued) or outflow (debt paid) from debt financing.
+  - Other Financing Activities (NUMERIC): 
+    - The cash inflows or outflows related to other financing activities that are not categorized under dividends paid, share issuance/repurchase, or debt issued/paid.
+  - Financing Cash Flow (NUMERIC): 
+    - The net cash inflow or outflow from all financing activities.
+  - Net Cash Flow (NUMERIC): 
+    - The total change in a company's cash and cash equivalents during a period.
+  - Free Cash Flow (NUMERIC): 
+    - The cash a company generates from its operations that is free to be distributed to investors, calculated as operating cash flow minus capital expenditures.
+  - Free Cash Flow Growth (NUMERIC): 
+    - The percentage growth in free cash flow from the previous year.
+  - Free Cash Flow Margin (NUMERIC): 
+    - The free cash flow divided by total revenue, expressed as a percentage. It represents how much free cash flow is generated for each dollar of revenue.
+  - Free Cash Flow Per Share (NUMERIC): 
+    - The free cash flow divided by the total number of shares outstanding. It indicates the amount of free cash flow available per share.
+
+
+- Income Statement Data:
+  - Year (DATE): 
+    - If it is the annual data, this variable is the year in which the data was recorded.
+
+  - Quarter (DATE): 
+    - If it is the quarterly data, this variable is the quarter in which the data was recorded.
+  
+  - Revenue (NUMERIC): 
+    - The total money made from selling goods and services.
+  - Revenue Growth (YoY) (NUMERIC): 
+    - The percentage change in revenue from the previous year.
+  - Gross Profit (NUMERIC): 
+    - The profit a company makes after deducting the costs associated with making and selling its products, or the costs associated with providing its services.
+  - Selling, General & Admin (NUMERIC): 
+    - The sum of all direct and indirect selling expenses and all general and administrative expenses of a company.
+  - Other Operating Expenses (NUMERIC): 
+    - The category of expenditure that a business incurs as a result of performing its normal business operations.
+  - Operating Expenses (NUMERIC): 
+    - The sum of a business's operating expenses for a period of time.
+  - Operating Income (NUMERIC): 
+    - The profit realized from a business's operations.
+  - Other Expense / Income (NUMERIC): 
+    - Expenses or incomes that are unusual, not recurring, or not directly tied to the company's normal operations.
+  - Pretax Income (NUMERIC): 
+    - The income that a company makes before deducting the income taxes it owes.
+  - Income Tax (NUMERIC): 
+    - The amount of tax owed to the government based on reported income.
+  - Net Income (NUMERIC): 
+    - The company's total earnings or profit.
+  - Net Income Growth (NUMERIC): 
+    - The year-over-year growth rate of net income.
+  - Shares Outstanding (Basic) (NUMERIC): 
+    - The number of shares that are currently held by all its shareholders, including institutional investors.
+  - Shares Outstanding (Diluted) (NUMERIC): 
+    - The number of shares that would be outstanding if all possible sources of conversion, such as convertible bonds and stock options, were exercised.
+  - Shares Change (NUMERIC): 
+    - The percentage change in the number of outstanding shares from the previous year.
+  - EPS (Basic) (NUMERIC): 
+    - The portion of a company's profit allocated to each outstanding share of common stock.
+  - EPS (Diluted) (NUMERIC): 
+    - A calculation for earnings per share if all convertible securities were exercised.
+  - EPS Growth (NUMERIC): 
+    - The percentage change in EPS from the previous year.
+  - Free Cash Flow Per Share (NUMERIC): 
+    - The amount of free cash flow (cash a company has left over after it has paid expenses, interest, taxes, and long-term investments) allocated to each outstanding share of common stock.
+  - Dividend Per Share (NUMERIC): 
+    - The total dividends declared divided by the number of outstanding shares.
+  - Dividend Growth (NUMERIC): 
+    - The year-over-year growth rate of dividends per share.
+  - Gross Margin (NUMERIC): 
+    - Gross profit divided by revenues, expressed as a percentage.
+  - Operating Margin (NUMERIC): 
+    - Operating income divided by revenues, expressed as a percentage.
+  - Profit Margin (NUMERIC): 
+    - Net income divided by revenues, expressed as a percentage.
+  - Free Cash Flow Margin (NUMERIC): 
+    - Free cash flow divided by total revenue, expressed as a percentage.
+  - Effective Tax Rate (NUMERIC): 
+    - The average rate at which a company's pre-tax profits are taxed.
+  - EBITDA (NUMERIC): 
+
+
+    - Earnings before interest, taxes, depreciation, and amortization.
+  - EBITDA Margin (NUMERIC): 
+    - EBITDA divided by total revenue, expressed as a percentage.
+  - Depreciation & Amortization (NUMERIC): 
+    - The decrease in value of the company's assets over time.
+  - EBIT (NUMERIC): 
+    - Earnings Before Interest and Taxes, a measure of a firm's profit that includes all incomes and expenses except interest expenses and income tax expenses.
+  - EBIT Margin (NUMERIC): 
+    - EBIT divided by total revenue, expressed as a percentage.
+
+
+- Ratios: 
+
+  - Year:  If it is the annual data, this variable is the year in which the data was recorded.
+
+  - Quarter: If it is the quarterly data, this variable is the quarter in which the data was recorded. 
+
+  - Market Capitalization: This is the total value of a company's outstanding shares of stock, calculated by multiplying the share price by the number of outstanding shares.
+
+  - Market Cap Growth: This shows the percentage change in the market capitalization from year to year.
+
+  - Enterprise Value: This is a measure of a company's total value, considering not only its equity (like market capitalization does) but also its debt and cash.
+
+  - PE Ratio (Price/Earnings Ratio): This ratio compares a company's current share price to its earnings per share (EPS).
+
+  - PS Ratio (Price/Sales Ratio): This ratio compares a company's market capitalization with its annual revenue.
+
+  - PB Ratio (Price/Book Ratio): This ratio compares a company's market capitalization to its book value (which is assets minus liabilities).
+
+  - P/FCF Ratio (Price/Free Cash Flow Ratio): This compares a company's market capitalization to its free cash flow.
+
+  - P/OCF Ratio (Price/Operating Cash Flow Ratio): This compares a company's market capitalization to its operating cash flow.
+
+  - EV/Sales Ratio: This compares a company's enterprise value to its annual revenue.
+
+  - EV/EBITDA Ratio: This compares a company's enterprise value to its earnings before interest, tax, depreciation, and amortization (EBITDA).
+
+  - EV/EBIT Ratio: This compares a company's enterprise value to its earnings before interest and tax (EBIT).
+
+  - EV/FCF Ratio: This compares a company's enterprise value to its free cash flow.
+
+  - Debt / Equity Ratio: This measures a company's financial leverage by comparing its total debt with its total equity.
+
+  - Debt / EBITDA Ratio: This compares a company's total debt to its EBITDA.
+
+  - Debt / FCF Ratio: This compares a company's total debt to its free cash flow.
+
+  - Asset Turnover: This ratio measures how efficiently a company uses its assets to generate revenue.
+
+  - Return on Equity (ROE): This ratio measures the profitability of a company in relation to the equity held by shareholders.
+
+  - Return on Assets (ROA): This ratio measures the profitability of a company in relation to its total assets.
+
+  - Return on Capital (ROIC): This ratio measures the return that an investment generates for capital contributors, i.e., bondholders and shareholders.
+
+  - Earnings Yield: This is the inverse of the P/E ratio and shows the percentage of each dollar invested in the stock that was earned by the company.
+
+  - FCF Yield: This is the inverse of the P/FCF ratio and shows the percentage of free cash flow relative to the market capitalization of the company.
+
+  - Dividend Yield: This shows how much a company pays out in dividends each year relative to its share price.
+
+  - Payout Ratio: This measures the proportion of earnings a company pays shareholders in dividends.
+
+  - Buyback Yield / Dilution: This measures the percentage change in the number of outstanding shares due to stock buybacks or dilution.
+
+  - Total Shareholder Return: This measures the return of an investment in a company's stock, including both price appreciation and dividends.
+
 
 ### [Strengths]
 NASDAQ: 
