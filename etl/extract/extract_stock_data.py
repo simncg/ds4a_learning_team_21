@@ -1,5 +1,3 @@
-
-#%%
 # Set working directory and import libraries 
 import os
 import sys
@@ -74,7 +72,12 @@ class DataExtractor:
         with open(os.path.join(DATA_PATH, "raw", "json_data", f"{symbol}.json"), 'r') as f:
             data = json.load(f)
 
-        stock_data = pd.DataFrame(data["stock_price"])  
+        stock_data = pd.DataFrame(data["stock_price"]) 
+
+        if stock_data.empty:
+            print(f"No stock data found for symbol {symbol}.")
+            return
+         
         stock_data["date"] = pd.to_datetime(stock_data["date"]).dt.date
 
             
@@ -91,6 +94,12 @@ class DataExtractor:
                             
             # Obtain stock data
             new_stock_data = sym.history(start=start, end=end).reset_index()
+
+            # If there is no new stock data, finish the task
+            if new_stock_data.empty:
+                print(f"Not new stock data available in Yahoo Finance API for {symbol}")
+                return 
+
             new_stock_data["date"] = pd.to_datetime(new_stock_data["date"]).dt.date
                     
             # Append with previous stock data 
@@ -100,10 +109,9 @@ class DataExtractor:
 
             # Save CSV file 
             stock_data.to_csv(os.path.join(DATA_PATH, "raw", "stock_prices", f"{symbol}.csv"), index=False)
-            
-            print(stock_data["date"].max())
-            print(stock_data["date"].min())
-            print(stock_data.shape)
+
+            #print(stock_data["date"].min())
+            #print("Data updated until " + stock_data["date"].max() + "for " + symbol)
 
             # Update JSON file with all info 
             data["stock_price"] = stock_data.to_dict()
@@ -111,6 +119,9 @@ class DataExtractor:
             # Save to JSON
             with open(os.path.join(DATA_PATH, "raw", "json_data", f"{symbol}.json"), 'w') as outfile:
                 json.dump(data, outfile, default=date_handler)
+        else: 
+            print(f"Stock data for {symbol} is already up to date.")
+            return 
 
         
         
@@ -153,8 +164,3 @@ class DataExtractor:
                     print(f"Max retries reached for symbol {symbol}. Moving to the next symbol...")
                         
     
-
-# %%
-Extractor = DataExtractor(["MSFT", "AMZN"])
-# %%
-Extractor.extract_data()
