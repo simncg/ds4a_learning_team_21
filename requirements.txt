@@ -5,3 +5,4 @@ yahooquery
 datetime
 numpy 
 geopy
+boto3
