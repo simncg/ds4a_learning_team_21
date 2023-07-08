@@ -1,3 +1,4 @@
+#%%
 import os
 import sys
 import time 
@@ -6,7 +7,7 @@ sys.path.append(os.path.dirname(os.getcwd()))
 from etl.extract import extract_stock_data
 from etl.transform import transform_data
 from etl.load import load_data
-
+#%%
 # Read data with companies symbols
 symbols = pd.read_excel("../data/raw/financial_sector_companies.xlsx")["Symbol"].to_list()
 
@@ -52,14 +53,24 @@ s3_loader.create_folder(bucket_name, folder_raw_data)
 s3_loader.create_folder(bucket_name, folder_processed)
 
 # Upload json files (raw data) to the S3 bucket
-for file in os.listdir("../../data/raw/json_data"):
+for file in os.listdir("../data/raw/json_data"):
     if file.endswith(".json"):
         print(file)
-        s3_loader.upload_file('../../data/raw/json_data/'+file, bucket_name, folder_raw_data+'/'+file)
+        s3_loader.upload_file('../data/raw/json_data/'+file, bucket_name, folder_raw_data+'/'+file)
 
 # Upload processed data to the S3 bucket
-for file in os.listdir('../../data/processed'):
+for file in os.listdir('../data/processed'):
     if file.endswith(".csv"):
         print(file)
-        s3_loader.upload_file('../../data/processed/'+ file, bucket_name, folder_processed+'/'+file)
+        s3_loader.upload_file('../data/processed/'+ file, bucket_name, folder_processed+'/'+file)
 
+
+
+
+#%%
+
+for file in os.listdir('../data/processed'):
+    print(file)
+
+#data = pd.read_csv("../data/processed/stock_price.csv")
+# %%
