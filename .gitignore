@@ -1,3 +1,8 @@
 .DS_STORE
 settings.json
 data/processed/
+.gitignore
+etl/transform/*ipynb
+etl/extract/*ipynb
+etl/load/*ipynb*
+pipelines/*ipynb
