@@ -7,6 +7,7 @@ import json
 import datetime
 from ..utils.date_json_handler import date_handler
 
+
 DATA_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "data")
 
 class StockData:
