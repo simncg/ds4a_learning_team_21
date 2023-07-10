@@ -14,6 +14,9 @@ from src.data import stock_data
 from src.utils.date_json_handler import date_handler
 
 
+
+
+
 class DataExtractor:
     def __init__(self, symbols: list):
         self.symbols = symbols
